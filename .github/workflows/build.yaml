@@ -58,7 +58,7 @@ jobs:
       shell: bash
       run: |
         cd binaryninjaapi
-        git apply --verbose ${{matrix.version.patch-file}} 
+        git apply --allow-empty --verbose ${{matrix.version.patch-file}} 
     - name: Configure CMake
       run: cmake -B ${{github.workspace}}/build -G Ninja -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
     - name: Build
